@@ -1,6 +1,6 @@
-# HeartBit Admin Portal
+# HeartBit Admin
 
-To visit the HeartBit Admin Portal, follow this link: https://heartbit-admin-portal.vercel.app/
+To visit the HeartBit Admin Portal, follow this link: https://heartbit-admin.vercel.app/
 
 This site was built with Next.js and is hosted on Vercel.
 
