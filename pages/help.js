@@ -19,7 +19,7 @@ const Help = () => {
       </p>
       <p>
         Feel free to share permission to access that folder with whoever you 
-        trust by managing its "share access" directly in Google. Best of luck!
+        trust by managing its share access directly in Google. Best of luck!
       </p>
     </div>
   );
