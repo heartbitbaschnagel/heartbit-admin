@@ -7,7 +7,7 @@ const Footer = () => {
         Developed by Daniel Bjånes, Wil Clancy, Cooper Farrar, Jake O'Donnell, and Matt Ryan
         <br />
         View the HeartBit Admin 
-        Portal <a href="https://github.com/heartbitbaschnagel/heartbit-admin" target="_blank">code</a>
+        Portal <a href="https://github.com/heartbitbaschnagel/heartbit-admin" target="_blank" rel="noreferrer">code</a>
       </p>
     </footer>
   );

@@ -13,7 +13,11 @@ const Help = () => {
         we set up for you, heartbitbaschnagel@gmail.com.
       </p>
       <p>
-        <a href="https://drive.google.com/drive/folders/1IuxT9-S0qh5f2aiZ28zFPJFES2BL0se4?usp=sharing" target="_blank">
+        <a 
+          href="https://drive.google.com/drive/folders/1IuxT9-S0qh5f2aiZ28zFPJFES2BL0se4?usp=sharing" 
+          target="_blank" 
+          rel="noreferrer"
+        >
           This is a link to that folder.
         </a>
       </p>
