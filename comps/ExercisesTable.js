@@ -37,7 +37,9 @@ const ExercisesTable = ({ geLoading, geData }) => {
           <tbody className="et-body">
             {geData?.exercises?.map(exercise => (
               <tr key={exercise.id} value={exercise.id}>
-                <td className="et-body-date-collected">{exercise.dateCollected.split("T")[0]}</td>
+                <td className="et-body-date-collected">
+                  {exercise.dateCollected.replace("T", ", ").slice(0, -8)}
+                </td>
                 <td className="et-body-email">{exercise.user.email}</td>
                 <td className="et-body-dob">{exercise.user.dob.split("T")[0]}</td>
                 <td className="et-body-sex">{exercise.user.sex}</td>

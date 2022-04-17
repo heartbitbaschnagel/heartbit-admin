@@ -3,9 +3,14 @@ import { saveAs } from 'file-saver';
 
 const cleanDate = date => date.split(".")[0].replaceAll(":", "-");
 
+const cleanPeriods = str => str.replaceAll(".", "-");
+
 const populateFilesForExercise = (zipRootFolder, exercise) => {
-  const dc = cleanDate(exercise.dateCollected);
-  const folderName = `${exercise.user.email}_inhale_${exercise.bpmIn}_exhale_${exercise.bpmOut}_collected_${dc}`;
+  const cleanDC = cleanDate(exercise.dateCollected);
+  const cleanE = cleanPeriods(exercise.user.email);
+  const cleanBI = cleanPeriods(exercise.bpmIn.toFixed(2));
+  const cleanBO = cleanPeriods(exercise.bpmOut.toFixed(2));
+  const folderName = `${cleanE}_${cleanDC}_in${cleanBI}_ex${cleanBO}`;
   const folder = zipRootFolder.folder(folderName);
 
   const userFileName = `user_${exercise.user.email}.txt`;
@@ -22,7 +27,7 @@ const populateFilesForExercise = (zipRootFolder, exercise) => {
   `;
   folder.file(userFileName, userContent);
 
-  const dataFileName = `rr_intervals_${folderName}.txt`;
+  const dataFileName = `RR_${folderName}.txt`;
   const dataContent = exercise.data.join(",");
   folder.file(dataFileName, dataContent);
 

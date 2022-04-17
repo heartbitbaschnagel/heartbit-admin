@@ -17,10 +17,11 @@ class ExercisesForm extends React.Component {
     } else { 
       let value;
       if (event.target.type == "date") {
-        value = event.target.value != "" ? event.target.value + "T00:00:00Z" : undefined;
+        value = event.target.value == "" ? undefined :
+          event.target.value + (event.target.id === "latestCollection" ? "T23:59:59Z" : "T00:00:00Z");
       } else {
         const valueAsInt = parseInt(event.target.value)
-        value = valueAsInt ? valueAsInt : event.target.value;
+        value = valueAsInt ? (event.target.id === "oldest" ? valueAsInt + 1 : valueAsInt) : event.target.value;
       }
       value = value == "" ? undefined : value;
       this.setState({[event.target.name]: value});
@@ -90,6 +91,7 @@ class ExercisesForm extends React.Component {
                         <div className="ef-age-range-dash">-</div>
                         <FormControl 
                           name="oldest" 
+                          id="oldest"
                           type="number" 
                           placeholder="oldest"
                           className="ef-age-range-old"  
@@ -132,7 +134,7 @@ class ExercisesForm extends React.Component {
                       <p className="ef-group-label">Group</p>
                       <FormControl 
                           name="groupId" 
-                          placeholder="TODO" 
+                          placeholder="Future Feature" 
                           className="ef-group"  
                           onChange={this.handleChange}
                           disabled={true}
@@ -152,6 +154,7 @@ class ExercisesForm extends React.Component {
                     <div className="ef-collection-range-dash">-</div>
                     <FormControl 
                       name="latestCollection" 
+                      id="latestCollection"
                       type="date" 
                       className="ef-collection-range-latest"  
                       onChange={this.handleChange}
